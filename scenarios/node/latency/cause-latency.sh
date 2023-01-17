@@ -10,8 +10,8 @@ ip -br l | awk '$1 !~ "lo|vir|wl|eni" { print $1}' | xargs -l -I % sudo tc qdisc
 
 for i in {1..10}
 do
-  sleep 180
-  echo `date +"%Y-%M-%d %T"`" - Warning: AWS monitoring detected a failing ethernet cable."
+  sleep 120
+  echo `date +"%Y-%m-%d %T"`" - Warning: AWS monitoring detected a failing ethernet cable."
 done
 
 ip -br l | awk '$1 !~ "lo|vir|wl|eni" { print $1}' | xargs -l -I % sudo tc qdisc del dev % root netem delay $LATENCY
