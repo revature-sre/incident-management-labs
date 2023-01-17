@@ -11,10 +11,10 @@ consumecpu() {
 
 consumecpu
 
-for i in {1..10}
+for i in {1..5}
 do
-  sleep 60
-  echo "Warning: AWS monitoring taking more resources than expected!"
+  sleep 120
+  echo `date +"%Y-%M-%d %T"`" - Warning: AWS monitoring taking more resources than expected!"
 done
 
 killall dd
