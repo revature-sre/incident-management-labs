@@ -5,7 +5,7 @@ sudo systemctl enable atd
 
 read -r -d '' CRONTAB <<'EOF'
 SHELL=/bin/bash
-0 * * * * root echo "sh /home/ec2-user/consume-cpu.sh > /var/log/aws-monitoring.log 2>&1" | at now + $(( RANDOM \% 10 )) minutes > /dev/null
+0 * * * * root echo "sh /usr/local/etc/consume-cpu.sh > /var/log/aws-monitoring.log 2>&1" | at now + $(( RANDOM \% 10 )) minutes > /dev/null
 EOF
 
 sudo touch /etc/cron.d/schedule1
